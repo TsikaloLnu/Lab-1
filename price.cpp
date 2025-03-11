@@ -1,15 +1,18 @@
 #include "price.hpp"
 
+#include <iostream>
+#include <fstream>
+using namespace std;
+
 price add(price a, price b){
-    price result;
     a.hrn += b.hrn;
     a.kop += b.kop;
 
-    if (result.kop >= 100){
-        result.hrn += 1;
-        result.kop -= 100;
+    if (a.kop >= 100){
+        a.hrn += 1;
+        a.kop -= 100;
     }
-    return result;
+    return a;
 };
 
 price multiply(price a, int quantity){
@@ -25,10 +28,10 @@ price multiply(price a, int quantity){
 }
 
 price roundPrice(price n) {
-    if (n.kop % 10 >= 5) {
-        n.kop = (n.kop / 10 + 1) * 10;
+    if (n.kop % 10 < 5) {
+        n.kop -= n.kop % 10; 
     } else {
-        n.kop = (n.kop / 10) * 10;
+        n.kop += (10 - n.kop % 10);
     }
     if (n.kop == 100) {
         n.hrn += 1;
@@ -38,5 +41,5 @@ price roundPrice(price n) {
 }
 
 void consolePrice(price p) {
-    std::cout << p.hrn << " грн " << p.kop << " коп" << std::endl;
+    cout << p.hrn << " Hrn " << p.kop << " Kop" << endl;
 }

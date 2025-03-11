@@ -1,10 +1,6 @@
 #ifndef PRICE_HPP
 #define PRICE_HPP
 
-#include <iostream>
-#include <fstream>
-using namespace std;
-
 struct price{
     int hrn; // змінна, яка зберігає гривні
     short int kop; // змінна, яка зберігає копійки
