@@ -1,5 +1,5 @@
-#ifndef PRICE_HPP
-#define PRICE_HPP
+#ifndef PRICE_H
+#define PRICE_H
 
 struct price{
     int hrn; // змінна, яка зберігає гривні

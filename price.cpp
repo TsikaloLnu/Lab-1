@@ -1,4 +1,4 @@
-#include "price.hpp"
+#include "price.h"
 
 #include <iostream>
 #include <fstream>
