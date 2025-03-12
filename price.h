@@ -7,9 +7,9 @@ struct price{
 };
 
 //оголошення функцій
-price add(price a, price b);
-price multiply(price a, int quantity); //ціле число, яке представляє кількість.
-price roundPrice(price n);
-void consolePrice(price n);
+void add(price &a, price &b);
+void multiply(price &a, int quantity); //ціле число, яке представляє кількість.
+void roundPrice(price &n);
+void consolePrice(price &n);
 
 #endif

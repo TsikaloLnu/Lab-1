@@ -6,21 +6,25 @@ using namespace std;
 int main(){
     ifstream file("price.txt");
     if (!file) {
-        cout << "Помилка відкриття файлу!" << endl;
+        cout << "Eror with opening file!" << endl;
         return 1;
     }
 
     price total = {0, 0};
-    int h, k, q;
+    int h, q;
+    short int k;
 
-    while (file >> h >> k >> q) 
-    total = add(total, multiply({h, (short)k}, q));
+    while (file >> h >> k >> q) {
+        price item = {h, k};
+        multiply (item, q);
+        add (total, item);
+    }
     file.close();
 
     cout << "Total price:";
     consolePrice(total);
 
-    total = roundPrice(total);
+    roundPrice(total);
     cout << "Total rounded price: ";
     consolePrice(total);
 };
