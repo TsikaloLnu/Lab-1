@@ -17,13 +17,12 @@ void add(price &a, price &b){
 };
 
 void multiply(price &a, int quantity){
-    price result;
-    result.hrn = a.hrn * quantity;
-    result.kop = a.kop * quantity;
+    a.hrn = a.hrn * quantity;
+    a.kop = a.kop * quantity;
 
-    if(result.kop >= 100){
-        result.hrn += result.kop / 100;
-        result.kop %= 100;
+    if(a.kop >= 100){
+        a.hrn += a.kop / 100;
+        a.kop %= 100;
     }
 }
 
